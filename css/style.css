@@ -192,6 +192,29 @@ footer{background:var(--navy-dark);color:#cbd5e1;padding:48px 0 0;margin-top:48p
 .page-hero h1{font-size:34px;margin-bottom:10px}
 .page-hero p{opacity:.92;max-width:620px}
 
+/* Guide / article content */
+.guide-wrap{max-width:860px;margin:0 auto}
+.guide-content{font-size:16px;color:var(--text)}
+.guide-content h2{color:var(--navy);font-size:23px;margin:36px 0 14px}
+.guide-content h3{color:var(--navy-2);font-size:17px;margin:22px 0 8px}
+.guide-content p{color:var(--text);margin-bottom:14px;line-height:1.75}
+.guide-content ul{margin:0 0 16px}
+.guide-content li{padding:6px 0 6px 26px;position:relative;line-height:1.7}
+.guide-content li::before{content:"•";position:absolute;left:6px;color:var(--orange)}
+.guide-content a{color:var(--blue);font-weight:600}
+.guide-content a:hover{text-decoration:underline}
+.guide-table{width:100%;border-collapse:collapse;margin:16px 0 22px;font-size:14px}
+.guide-table th,.guide-table td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+.guide-table th{background:var(--soft);color:var(--navy)}
+.guide-table td{color:var(--muted)}
+.guide-back{display:inline-block;margin-bottom:24px;font-weight:600;color:var(--navy-2);font-size:14px}
+.guide-meta{color:var(--muted);font-size:13px;margin-top:10px}
+.guide-cta{margin-top:40px}
+.guide-content .cta h2{color:#fff}
+.guide-content .cta p{color:#fff}
+.guide-content .cta .btn.ghost{color:#fff}
+.guide-content .cta .btn{color:#fff}
+
 /* Notice / contact links */
 .notice{background:#EBF1F8;border-left:3px solid var(--orange);padding:14px 18px;border-radius:10px;margin-bottom:20px;font-size:14px;line-height:1.7}
 .notice a,.info-card a{color:var(--navy);font-weight:700}
