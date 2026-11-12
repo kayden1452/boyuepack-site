@@ -43,7 +43,7 @@ Pages 项目 → Custom domains → Add a domain（如 `boyuepack.com`），按�
 | 全站电话 | 已填 +86 19953322028 | 上线后核对 |
 | 各页面 canonical / og:url / sitemap | https://www.boyuepack.com/ | 你的真实域名 |
 | contact.html 表单 | 已接 FormSubmit（无需注册） | 首封提交会往 outlook 发激活邮件，点一次链接即可收询盘；想换 Formspree 再改 action |
-| index.html 注释中的 GA4 | G-XXXXXXXXXX | 你的 GA4 测量 ID（可选） |
+| 全站 GA4 | G-9BLTFH1L7F（6 页已接入） | 数据在 GA 后台查看 |
 | images/*.svg | 占位图 | 后续替换成真实产品照片（压缩后放入 images/） |
 
 ## 谷歌配套（上线后做）
