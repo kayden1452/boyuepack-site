@@ -98,6 +98,8 @@ section{padding:72px 0}
 .compare-card.featured{border-color:var(--accent);background:linear-gradient(180deg,#F3F9FF,#fff)}
 .compare-card h3{color:var(--navy);font-size:20px;margin-bottom:6px}
 .compare-card .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent-2);margin-bottom:12px}
+.press-img{background:#F4F6F9;border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:16px;overflow:hidden}
+.press-img img{width:100%;height:auto;display:block;object-fit:contain}
 .compare-card ul{margin-top:14px}
 .compare-card li{padding:8px 0 8px 26px;position:relative;color:var(--muted);font-size:14px}
 .compare-card li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
