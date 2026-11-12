@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.boyuepack.com/sitemap.xml
+Sitemap: https://boyuepackaging.com/sitemap.xml
