@@ -39,6 +39,9 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
 .hero-chips{display:flex;gap:12px;flex-wrap:wrap}
 .hero-chips span{border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:6px 14px;font-size:13px;opacity:.92}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero-video{justify-self:end;width:100%;max-width:340px}
+.hero-video video{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18)}
 
 /* Buttons */
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;transition:background .2s,transform .2s}
@@ -157,6 +160,8 @@ footer{background:var(--navy-dark,#122C47);color:#cbd5e1;padding:48px 0 0;margin
   .grid,.prod-grid,.value-grid{grid-template-columns:repeat(2,1fr)}
   .stats .grid-4,.process,.grid-4{grid-template-columns:repeat(2,1fr)}
   .compare,.grid-2{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-video{justify-self:center;max-width:300px}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
