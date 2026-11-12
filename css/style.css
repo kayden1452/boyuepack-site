@@ -43,7 +43,8 @@ section{padding:60px 0}
 /* Products */
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .prod{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
-.prod .thumb{background:var(--soft);padding:24px;display:flex;justify-content:center;align-items:center;height:180px}
+.prod .thumb{background:var(--soft);padding:24px;display:flex;justify-content:center;align-items:center;height:200px}
+.prod .thumb img{max-height:160px;width:auto;max-width:100%;object-fit:contain;border-radius:6px}
 .prod .body{padding:20px}
 .prod h3{color:var(--navy);font-size:17px;margin-bottom:8px}
 .prod p{color:var(--muted);font-size:14px}
