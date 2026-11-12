@@ -39,8 +39,8 @@ Pages 项目 → Custom domains → Add a domain（如 `boyuepack.com`），按�
 
 | 位置 | 占位 | 改成 |
 | --- | --- | --- |
-| 全站邮箱 | sales@boyuepack.com | 你的真实邮箱 |
-| 全站电话 | +86 532 8888 6666 | 你的真实电话 / WhatsApp |
+| 全站邮箱 | 已填 yh19953322028@outlook.com | 上线后核对 |
+| 全站电话 | 已填 +86 19953322028 | 上线后核对 |
 | 各页面 canonical / og:url / sitemap | https://www.boyuepack.com/ | 你的真实域名 |
 | contact.html 表单 | `https://formspree.io/f/XXXXXXX` | 注册 formspree.io 后替换成你的表单 endpoint |
 | index.html 注释中的 GA4 | G-XXXXXXXXXX | 你的 GA4 测量 ID（可选） |
