@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Request a Packaging Quotation - BOYUE PACK</title>
+  <title>Contact BOYUE | Custom Packaging Quote</title>
   <meta name="description" content="Contact BOYUE PACK for a custom flexible packaging quotation. Share your product type, bag size, material structure, quantity and printing requirements; we reply from Qingdao, China by email or WhatsApp.">
   <meta name="keywords" content="Request a Quote, Custom Packaging Bags, Flexible Packaging Supplier, Coffee Bags Manufacturer, Pet Food Packaging Bags">
   <link rel="canonical" href="https://boyuepackaging.com/contact.html">
@@ -45,8 +45,9 @@
 
   <section class="page-hero">
     <div class="container">
-      <h1>Contact &amp; Request a Quote</h1>
-      <p>Share your packaging requirements below. The more detail you provide on product, size, material and quantity, the faster we can prepare a quotation and material recommendation.</p>
+      <h1>Contact BOYUE</h1>
+      <p><strong>Let's Discuss Your Packaging Project</strong></p>
+      <p style="margin-top:10px">Looking for customized flexible packaging in China? Send us your product specifications, artwork or packaging requirements. Our team will review your project and get back to you with suitable packaging solutions.</p>
     </div>
   </section>
 
@@ -75,9 +76,10 @@
 
       <div class="form-wrap">
         <!-- Form backend: FormSubmit. First submission sends an activation email to the address above; click the link once to enable receiving inquiries. -->
-        <form action="https://formsubmit.co/yh19953322028@outlook.com" method="POST">
+        <form action="https://formsubmit.co/yh19953322028@outlook.com" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_subject" value="New inquiry from Boyue Pack website">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://boyuepackaging.com/contact.html?sent=1">
 
           <div class="form-grid">
             <div class="form-row">
@@ -148,6 +150,17 @@
             </select>
           </div>
 
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="thickness">Thickness</label>
+              <input type="text" id="thickness" name="thickness" placeholder="e.g. 100 µm total, or PET12/PE80">
+            </div>
+            <div class="form-row">
+              <label for="market">Target Market</label>
+              <input type="text" id="market" name="target_market" placeholder="e.g. Germany / USA / UAE">
+            </div>
+          </div>
+
           <div class="form-row">
             <label for="printing">Printing Requirements</label>
             <select id="printing" name="printing">
@@ -161,6 +174,18 @@
           <div class="form-row">
             <label for="requirements">Additional Requirements</label>
             <textarea id="requirements" name="requirements" placeholder="Product content, features (zipper, spout, valve, window, handle), artwork, colors, target market, lead time, etc."></textarea>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="artwork">Artwork Upload</label>
+              <input type="file" id="artwork" name="attachment" accept=".pdf,.ai,.eps,.psd,.jpg,.jpeg,.png,.zip">
+              <p style="font-size:12px;color:var(--muted);margin-top:6px">Optional. PDF, AI, EPS, PSD, JPG, PNG or ZIP up to 10 MB. You can also send files by email or WhatsApp.</p>
+            </div>
+            <div class="form-row">
+              <label for="expected">Expected Order Date</label>
+              <input type="text" id="expected" name="expected_order_date" placeholder="e.g. March 2027, or as soon as possible">
+            </div>
           </div>
 
           <button type="submit" class="btn orange">Send Inquiry</button>
@@ -188,10 +213,10 @@
         </div>
         <div>
           <h4>Products</h4>
-          <p><a href="products.html#coffee-bags">Coffee Bags</a></p>
-          <p><a href="products.html#stand-up-pouches">Stand-up Pouches</a></p>
-          <p><a href="products.html#pet-food-bags">Pet Food Bags</a></p>
-          <p><a href="products.html#spout-pouches">Spout Pouches</a></p>
+          <p><a href="coffee-bags.html">Coffee Bags</a></p>
+          <p><a href="stand-up-pouches.html">Stand-up Pouches</a></p>
+          <p><a href="pet-food-bags.html">Pet Food Bags</a></p>
+          <p><a href="spout-pouches.html">Spout Pouches</a></p>
           <p><a href="products.html#roll-film">Printed Roll Film</a></p>
         </div>
         <div>
