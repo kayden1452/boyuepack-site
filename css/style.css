@@ -42,7 +42,8 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
 .hero-chips{display:flex;gap:12px;flex-wrap:wrap}
 .hero-chips span{border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:6px 14px;font-size:13px;opacity:.92}
-.hero-trust{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 26px}
+.hero-trust{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin:0 0 26px}
+.trust-stat{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .trust-badge{display:inline-flex;align-items:center;background:#fff;color:var(--navy);font-weight:800;font-size:15px;border-radius:20px;padding:7px 16px;letter-spacing:.3px;white-space:nowrap}
 .hero-trust .trust-text{font-size:14px;opacity:.92}
 .hero-media{border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18)}
