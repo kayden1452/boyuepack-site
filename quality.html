@@ -49,14 +49,25 @@
   .qlt-cert p{font-size:13.5px;line-height:1.5;color:var(--muted);margin:0}
   .qlt-cert-type{display:inline-block;margin-top:13px;font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--orange-dark);background:#fff3ec;border:1px solid #fbd9c6;border-radius:999px;padding:4px 9px}
   .qlt-cert-note{margin-top:26px;padding:18px 22px;background:var(--soft);border-left:3px solid var(--orange);border-radius:10px;font-size:13.5px;line-height:1.65;color:var(--muted)}
+  .qlt-cert-banner{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;margin-bottom:26px}
+  .qlt-cert-media{border-radius:16px;overflow:hidden;background:var(--soft);box-shadow:0 18px 40px rgba(22,58,92,.13)}
+  .qlt-cert-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+  .qlt-cert-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .qlt-cert-pills span{background:var(--navy);color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600}
+  .qlt-cert-icons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .qlt-cert-ico{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center}
+  .qlt-cert-ico .emoji{font-size:22px}
+  .qlt-cert-ico span:last-child{display:block;margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.45}
   @media(max-width:960px){
     .qlt-feature{grid-template-columns:1fr;gap:26px}
     .qlt-feature-media img{aspect-ratio:16/10}
     .qlt-cert-grid{grid-template-columns:repeat(2,1fr)}
+    .qlt-cert-banner{grid-template-columns:1fr;gap:24px}
   }
   @media(max-width:640px){
     .qlt-feature-body h3{font-size:21px}
     .qlt-cert-grid{grid-template-columns:1fr;gap:14px}
+    .qlt-cert-icons{grid-template-columns:1fr}
   }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Quality Assurance & Compliance", "url": "https://boyuepackaging.com/quality.html", "description": "Quality control across raw material inspection, printing, lamination, pouch making and finished product inspection, with testing and compliance documentation on request."}</script>
@@ -194,6 +205,27 @@
       <div class="section-head">
         <h2 class="section-title">Certificates &amp; Reports</h2>
         <p class="section-sub">The certifications, declarations and test reports normally required for food, pet food, coffee and general flexible packaging. Copies are released against the confirmed product, material structure and destination market.</p>
+      </div>
+      <div class="qlt-cert-banner">
+        <div class="qlt-cert-media">
+          <img src="images/cert-wall.jpg" alt="Illustrative reference of framed quality documents; certificates are issued by partners or authorized testing organizations" loading="lazy">
+        </div>
+        <div class="qlt-cert-side">
+          <div class="qlt-cert-pills">
+            <span>Sample Confirmation Before Bulk</span>
+            <span>Partner Quality Checks</span>
+            <span>Test Reports on Request</span>
+            <span>Food-Contact Materials</span>
+            <span>Market Documents Prepared</span>
+            <span>Material &amp; Structure Review</span>
+          </div>
+          <div class="qlt-cert-icons">
+            <div class="qlt-cert-ico"><span class="emoji">🛡️</span><span>Checked Production Partners</span></div>
+            <div class="qlt-cert-ico"><span class="emoji">📋</span><span>Agreed Specs Before Order</span></div>
+            <div class="qlt-cert-ico"><span class="emoji">🔍</span><span>Incoming &amp; Finished Inspection</span></div>
+            <div class="qlt-cert-ico"><span class="emoji">🧪</span><span>Performance Testing Arranged</span></div>
+          </div>
+        </div>
       </div>
       <div class="notice" style="margin-bottom:26px">Certifications and testing documents are issued by the relevant manufacturing partners or authorized testing organizations. Their scope and applicability should be verified for each specific product and project. BOYUE does not present partner certificates as its own, and no certificate is shown on this page without an actual supporting document.
             </div>
