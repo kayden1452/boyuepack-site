@@ -41,7 +41,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero h1{font-size:34px;line-height:1.16;margin-bottom:14px;max-width:620px}
 .hero p{font-size:15px;max-width:560px;opacity:.94;margin-bottom:18px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-.hero-chips{display:flex;gap:10px;flex-wrap:nowrap}
+.hero-chips{display:flex;gap:10px;flex-wrap:wrap}
 .hero-chips span{border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:5px 11px;font-size:12px;opacity:.92;white-space:nowrap}
 .hero-trust{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:0 0 18px}
 .trust-stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px;backdrop-filter:blur(6px)}
