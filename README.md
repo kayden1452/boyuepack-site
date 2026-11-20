@@ -40,7 +40,7 @@ Pages 项目 → Custom domains → Add a domain（如 `boyuepack.com`），按�
 | 位置 | 占位 | 改成 |
 | --- | --- | --- |
 | 全站邮箱 | 已填 manager@boyuepackaging.com | 上线后核对 |
-| 全站电话 | 已填 +86 19953322028 | 上线后核对 |
+| 全站电话 | 已填 +86 15318723890 (WhatsApp Business) | 上线后核对 |
 | 各页面 canonical / og:url / sitemap | https://www.boyuepack.com/ | 你的真实域名 |
 | contact.html 表单 | 已接 FormSubmit（无需注册） | 首封提交会往 outlook 发激活邮件，点一次链接即可收询盘；想换 Formspree 再改 action |
 | 全站 GA4 | G-9BLTFH1L7F（6 页已接入） | 数据在 GA 后台查看 |
