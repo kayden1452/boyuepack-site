@@ -5,7 +5,7 @@
 
 ## 1. 执行摘要
 
-- 现有页面 **20** 个（不含 404），新增产品页 **5** 个，全站页面总数 **20** 个可索引页 + 1 个 noindex 404 页
+- 原有页面 **15** 个，新增产品页 **5** 个 → 全站 **20** 个可索引页，另加 1 个 noindex 的 404 页
 - 每个页面独立 Title / Description / 唯一 H1 / 唯一 Canonical / Open Graph / Twitter Card / robots meta / lang=en
 - 9 个产品页全部带 **Product 结构化数据**；20 个页面带 **BreadcrumbList**；12 个页面带 **FAQPage**
 - 图片全部转为 WebP，引用同步切换，**5.7 MB → 2.8 MB（-51%）**，原 jpg 全部保留
