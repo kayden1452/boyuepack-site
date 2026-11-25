@@ -1,0 +1,36 @@
+name: sitemap
+
+# Keeps sitemap.xml in sync with the pages that actually exist.
+# Runs on every push to main and can also be triggered manually.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "gen_sitemap.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Regenerate sitemap
+        run: python3 gen_sitemap.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet sitemap.xml; then
+            echo "sitemap already up to date"
+            exit 0
+          fi
+          git config user.email "manager@boyuepackaging.com"
+          git config user.name "Kayden Yue"
+          git add sitemap.xml
+          git commit -m "chore: regenerate sitemap.xml [skip ci]"
+          git push
