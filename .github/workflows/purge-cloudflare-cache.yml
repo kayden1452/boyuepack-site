@@ -1,27 +1,27 @@
 name: Purge Cloudflare Cache
 
-# 目的：每次 Pages 部署成功后，自动清理 Cloudflare 边缘缓存。
-# 接入 Cloudflare 后边缘缓存会拉到 30 天，不清会让访客看到旧版。
+# 每次推送到 main，等本次提交的 Pages 构建完成后自动清理 Cloudflare 边缘缓存。
+# 接入 Cloudflare 后边缘缓存拉到 30 天，不清缓存访客会看到旧版。
 # 未配置 CF_API_TOKEN 时自动跳过，不报错、不影响部署。
 
 on:
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
+  pages: read
 
 jobs:
   purge:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Check token
         id: chk
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           if [ -z "$CF_API_TOKEN" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
@@ -30,11 +30,32 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Wait for Pages build of this commit
+        if: steps.chk.outputs.skip == 'false'
+        run: |
+          if [ "${{ github.event_name }}" != "push" ]; then
+            echo "手动触发，跳过构建等待"
+            exit 0
+          fi
+          sha="${GITHUB_SHA:0:7}"
+          for i in $(seq 1 20); do
+            info=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds/latest")
+            status=$(echo "$info" | jq -r '.status // empty')
+            commit=$(echo "$info" | jq -r '.commit // empty')
+            echo "poll $i: status=$status commit=${commit:0:7} target=$sha"
+            if [ "$status" = "built" ] && [ "${commit:0:7}" = "$sha" ]; then
+              echo "本次提交已完成部署"
+              exit 0
+            fi
+            sleep 8
+          done
+          echo "等待超时，仍继续清缓存（宁可多清一次）"
+
       - name: Resolve zone id
         if: steps.chk.outputs.skip == 'false'
         id: zone
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           resp=$(curl -s -H "Authorization: Bearer $CF_API_TOKEN" \
             "https://api.cloudflare.com/client/v4/zones?name=boyuepackaging.com")
@@ -50,7 +71,6 @@ jobs:
       - name: Purge everything
         if: steps.chk.outputs.skip == 'false'
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           ZONE: ${{ steps.zone.outputs.zone }}
         run: |
           curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" \
