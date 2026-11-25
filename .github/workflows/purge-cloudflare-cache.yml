@@ -1,0 +1,63 @@
+name: Purge Cloudflare Cache
+
+# 目的：每次 Pages 部署成功后，自动清理 Cloudflare 边缘缓存。
+# 接入 Cloudflare 后边缘缓存会拉到 30 天，不清会让访客看到旧版。
+# 未配置 CF_API_TOKEN 时自动跳过，不报错、不影响部署。
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check token
+        id: chk
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          if [ -z "$CF_API_TOKEN" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "CF_API_TOKEN 未配置，跳过缓存清理（站点仍正常部署）"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Resolve zone id
+        if: steps.chk.outputs.skip == 'false'
+        id: zone
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          resp=$(curl -s -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=boyuepackaging.com")
+          zid=$(echo "$resp" | jq -r '.result[0].id // empty')
+          if [ -z "$zid" ]; then
+            echo "未找到 boyuepackaging.com 的 zone，检查 token 权限（需 Zone:Read + Cache Purge）"
+            echo "$resp" | head -c 400
+            exit 1
+          fi
+          echo "zone=$zid" >> "$GITHUB_OUTPUT"
+          echo "zone id resolved"
+
+      - name: Purge everything
+        if: steps.chk.outputs.skip == 'false'
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          ZONE: ${{ steps.zone.outputs.zone }}
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' -o out.json
+          ok=$(jq -r '.success' out.json)
+          echo "purge success: $ok"
+          jq -r '.errors[]?.message // empty' out.json | sed 's/^/error: /'
+          [ "$ok" = "true" ] || exit 1

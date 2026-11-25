@@ -57,3 +57,14 @@ cd boyuepack-site
 python3 -m http.server 8000
 # 浏览器打开 http://localhost:8000
 ```
+
+## 发布后必做：清 Cloudflare 缓存
+接入 Cloudflare 后边缘缓存拉到 30 天，**改站发布必须清缓存**，否则访客看到旧版。
+
+已内置自动化 `.github/workflows/purge-cloudflare-cache.yml`：
+- 每次 Pages 部署成功后自动 `purge_everything`
+- 依赖仓库 secret `CF_API_TOKEN`（Cloudflare API Token，权限仅需 `Zone:Read` + `Cache Purge`）
+- 未配置该 secret 时自动跳过，不影响部署
+- 也可在 Actions 页面手动 `Run workflow`
+
+手动兜底：Cloudflare → Caching → Configuration → **Purge Everything**。
