@@ -201,6 +201,20 @@ footer{background:var(--navy-dark);color:#cbd5e1;padding:48px 0 0;margin-top:48p
 .footer-grid p,.footer-grid a{font-size:14px;line-height:2}
 .footer-grid a:hover{color:#fff}
 .copyright{border-top:1px solid rgba(255,255,255,.15);padding:18px 0;font-size:13px;opacity:.75}
+/* Home trust bar: Made-in-China badge */
+.trust-bar{background:var(--soft);padding:26px 0}
+.trust-badge{display:flex;align-items:center;gap:22px;justify-content:center;text-align:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 24px;box-shadow:var(--shadow-sm)}
+.trust-badge img{width:240px;max-width:100%;height:auto}
+.trust-badge .tb-text{text-align:left;display:flex;flex-direction:column;gap:4px}
+.trust-badge .tb-title{font-weight:700;color:var(--navy);font-size:15px}
+.trust-badge .tb-sub{font-size:13px;color:var(--muted)}
+.trust-badge:hover{box-shadow:var(--shadow-md);border-color:var(--soft-2)}
+@media(max-width:760px){
+  .trust-badge{flex-direction:column;gap:12px}
+  .trust-badge .tb-text{text-align:center}
+}
+
 .mic-badge{margin:4px 0 18px}
 .mic-badge a{display:inline-block;max-width:300px}
 .mic-badge img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
