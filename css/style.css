@@ -201,6 +201,10 @@ footer{background:var(--navy-dark);color:#cbd5e1;padding:48px 0 0;margin-top:48p
 .footer-grid p,.footer-grid a{font-size:14px;line-height:2}
 .footer-grid a:hover{color:#fff}
 .copyright{border-top:1px solid rgba(255,255,255,.15);padding:18px 0;font-size:13px;opacity:.75}
+.mic-badge{margin:4px 0 18px}
+.mic-badge a{display:inline-block;max-width:300px}
+.mic-badge img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+@media(max-width:760px){.mic-badge a{max-width:100%}}
 
 /* Page hero small */
 .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 50%,var(--navy-2) 100%);color:#fff;padding:56px 0}
