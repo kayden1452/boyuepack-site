@@ -225,6 +225,13 @@ footer{background:var(--navy-dark);color:#cbd5e1;padding:48px 0 0;margin-top:48p
 .page-hero h1{font-size:34px;margin-bottom:10px}
 .page-hero p{opacity:.92;max-width:620px}
 
+/* Visible breadcrumbs (mirrors BreadcrumbList schema) */
+.crumbs{font-size:12.5px;margin-bottom:16px;color:rgba(255,255,255,.62);line-height:1.5}
+.crumbs a{color:rgba(255,255,255,.82);text-decoration:none}
+.crumbs a:hover{color:#fff;text-decoration:underline}
+.crumbs .sep{margin:0 7px;color:rgba(255,255,255,.42)}
+.crumbs .cur{color:rgba(255,255,255,.65)}
+
 /* Guide / article content */
 .guide-wrap{max-width:860px;margin:0 auto}
 .guide-content{font-size:16px;color:var(--text)}
